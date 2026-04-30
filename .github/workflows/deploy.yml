@@ -29,17 +29,39 @@ jobs:
         run: |
           for file in docs/*.md; do
             filename=$(basename "$file" .md)
-            echo "Processus a $file..."
-            
-            
-            GENERATED_URL=$(curl -s -X POST "$API_URL" \
+            echo "--- Processus : $file ---"
+
+            # 1. Read the file content
+            CONTENT=$(cat "$file")
+
+            # 2. Create JSON payload
+            # Fields : name_file, folder, convert (bool), data (string)
+            JSON_PAYLOAD=$(jq -n \
+              --arg nf "$filename" \
+              --arg fd "github_docs" \
+              --arg mode "light-mode" \
+              --arg dt "$CONTENT" \
+              '{name_file: $nf, folder: $fd, convert: false, data: $dt, mode: $mode}')
+
+            # 3. Call the API
+            RESPONSE=$(curl -s -X POST "$API_URL" \
               -H "app_auth: $SAAS_AUTH" \
-              -H "Content-Type: text/markdown" \
-              --data-binary "@$file" | jq -r '.data.url')
+              -H "Content-Type: application/json" \
+              -d "$JSON_PAYLOAD")
 
-            echo "URL reçue: $GENERATED_URL"
+            echo "Response from API : $RESPONSE"
 
-            # 2. Génération du fichier HTML avec Iframe plein écran
+            # 4. Extraction de l'URL
+            GENERATED_URL=$(echo "$RESPONSE" | jq -r '.data.url // empty')
+
+            if [ -z "$GENERATED_URL" ] || [ "$GENERATED_URL" = "null" ]; then
+                echo "❌ ERROR: The URL could not be extracted for $file."
+                exit 1
+            fi
+
+            echo "✅ URL of document : $GENERATED_URL"
+
+            # 5. Generating HTML with full-screen iframe
             cat <<EOF > "_site/$filename.html"
           <!DOCTYPE html>
           <html lang="fr">
@@ -59,7 +81,7 @@ jobs:
           EOF
           done
 
-          # Renommer index.html si nécessaire pour GitHub Pages
+          # Rename index.html if necessary for GitHub Pages
           if [ -f "_site/index.html" ]; then
             echo "Index file ready"
           elif [ -f "_site/readme.html" ]; then
