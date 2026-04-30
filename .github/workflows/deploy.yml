@@ -35,7 +35,7 @@ jobs:
             GENERATED_URL=$(curl -s -X POST "$API_URL" \
               -H "app_auth: $SAAS_AUTH" \
               -H "Content-Type: text/markdown" \
-              --data-binary "@$file" | jq -r '.url')
+              --data-binary "@$file" | jq -r '.data.url')
 
             echo "URL reçue: $GENERATED_URL"
 
