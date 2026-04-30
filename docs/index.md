@@ -1,2 +1,2 @@
 # Ma Documentation
-- [technical Review](review.md)
+- [technical Review page](review.md)
