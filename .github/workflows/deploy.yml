@@ -41,7 +41,6 @@ jobs:
 
             STEP3=$(echo "$STEP2" | sed -E "s|url=\"([^\"]*)\.md\"|url=\"${REPO_PATH}/\1.html\"|g")
 
-            API_DATA="<base target='_parent'>\n\n$STEP3"
             
 
             # 2. Create JSON payload
@@ -50,7 +49,7 @@ jobs:
               --arg nf "$filename" \
               --arg fd "github_docs" \
               --arg mode "light-mode" \
-              --arg dt "$API_DATA" \
+              --arg dt "$STEP3" \
               '{filename: $nf, parent: $fd, convert: false, data: $dt, mode: $mode}')
 
             # 3. Call the API
