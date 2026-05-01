@@ -41,9 +41,7 @@ jobs:
 
             STEP3=$(echo "$STEP3" | sed -E "s|url=\"([^\"]*)\.md\"|href=\"${REPO_PATH}/\1.html\"|g")
 
-            FINAL_CONTENT=$(echo "$STEP3")
-
-            API_DATA="<base target='_parent'>\n\n$FINAL_CONTENT"
+            API_DATA="<base target='_parent'>\n\n$STEP3"
             
 
             # 2. Create JSON payload
