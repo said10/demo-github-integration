@@ -1,9 +1,9 @@
  _______
 
 :: menu{id="" theme="primary-theme" mode="mode-simple-menu" font="sans-serif-font-heading" box_type="container-box"}
-    :- link{url="index.md" target="_blank" text="Home Page"} :- link
-    :- link{url="classic_page.md" target="_blank" text="Classic Page about"} :- link
-    :- link{url="classic_page.md" target="_blank" text="Classic Page about"} :- link
+    :- link{url="index.md" target="_self" text="Home Page"} :- link
+    :- link{url="review.md" target="_self" text="Review Page about"} :- link
+    :- link{url="classic_page.md" target="_self" text="Classic Page about"} :- link
 :: menu
 
 
