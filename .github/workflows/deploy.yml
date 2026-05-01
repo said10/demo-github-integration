@@ -41,7 +41,7 @@ jobs:
 
             STEP3=$(echo "$STEP3" | sed -E "s|url=\"([^\"]*)\.md\"|href=\"${REPO_PATH}/\1.html\"|g")
 
-            FINAL_CONTENT=$(echo "$STEP2" | sed -E "s|url\(\"?([^)\"]*)\.md\"?\)|url(\"${REPO_PATH}/\1.html\")|g")
+            FINAL_CONTENT=$(echo "$STEP3")
 
             API_DATA="<base target='_parent'>\n\n$FINAL_CONTENT"
             
