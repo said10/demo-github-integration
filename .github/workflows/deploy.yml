@@ -34,16 +34,13 @@ jobs:
             # 1. Read the file content
             CONTENT=$(cat "$file" | sed -E 's/(\[[^]]*\]\([^)]*)\.md\)/\1.html)/g')
 
-
-            FINAL_CONTENT="<base target='_parent'>\n\n$CONTENT"
-
             # 2. Create JSON payload
             # Fields : name_file, folder, convert (bool), data (string)
             JSON_PAYLOAD=$(jq -n \
               --arg nf "$filename" \
               --arg fd "github_docs" \
               --arg mode "light-mode" \
-              --arg dt "$FINAL_CONTENT" \
+              --arg dt "$CONTENT" \
               '{filename: $nf, parent: $fd, convert: false, data: $dt, mode: $mode}')
 
             # 3. Call the API
