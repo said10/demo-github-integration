@@ -6,7 +6,7 @@
 
 :: menu{id="" theme="primary-theme" mode="mode-simple-menu" font="sans-serif-font-heading" box_type="container-box"}
     :- link{url="review.md" target="_blank" text="Technical Review Page"} :- link
-    :- link{url="classic_page.md" target="_blank" text="Classic Page test"} :- link
+    :- link{url="classic_page.md" target="_blank" text="Classic Page about"} :- link
 :: menu
 
 
