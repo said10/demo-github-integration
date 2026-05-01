@@ -4,8 +4,8 @@
 
     # Ma Documentation
 
-    - [technical Review page](review.md)
-    - [classic page](classic_page.md)
+    - [technical Review page](https://https://said10.github.io/demo-github-integration/review.html)
+    - [classic page](https://https://said10.github.io/demo-github-integration/classic_page.html)
 
 :: block
                
