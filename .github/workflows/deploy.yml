@@ -52,7 +52,7 @@ jobs:
               --arg nf "$filename" \
               --arg fd "github_docs" \
               --arg mode "light-mode" \
-              --arg dt "$CONTENT" \
+              --arg dt "$API_DATA" \
               '{filename: $nf, parent: $fd, convert: false, data: $dt, mode: $mode}')
 
             # 3. Call the API

@@ -1,3 +1,13 @@
+ _______
+
+:: menu{id="" theme="primary-theme" mode="mode-simple-menu" font="sans-serif-font-heading" box_type="container-box"}
+    :- link{url="index.md" target="_blank" text="Home Page"} :- link
+    :- link{url="classic_page.md" target="_blank" text="Classic Page about"} :- link
+    :- link{url="classic_page.md" target="_blank" text="Classic Page about"} :- link
+:: menu
+
+
+
 :: header{theme="strawberry-theme" mode="mode-text" font="sans-serif-font-global" align="align-center" box_type="container-view" sub_title="Welcome" button_link="" button_text="" cover="" title="Title of Technical Review" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} :: header
 
 ________

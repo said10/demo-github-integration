@@ -1,3 +1,12 @@
+ _______
+
+:: menu{id="" theme="primary-theme" mode="mode-simple-menu" font="sans-serif-font-heading" box_type="container-box"}
+    :- link{url="index.md" target="_blank" text="Home Page"} :- link
+    :- link{url="classic_page.md" target="_blank" text="Classic Page about"} :- link
+    :- link{url="classic_page.md" target="_blank" text="Classic Page about"} :- link
+:: menu
+
+
 :: header{theme="green-theme" mode="mode-text" font="serif-font-heading" align="left-align" box_type="container-view" sub_title="sub title" button_link="https://super-md.com" button_text="Super Markdown" cover="" title="title of header" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} :: header
 
 __________
