@@ -41,7 +41,7 @@ jobs:
               --arg fd "github_docs" \
               --arg mode "light-mode" \
               --arg dt "$CONTENT" \
-              '{name_file: $nf, folder: $fd, convert: false, data: $dt, mode: $mode}')
+              '{filename: $nf, parent: $fd, convert: false, data: $dt, mode: $mode}')
 
             # 3. Call the API
             RESPONSE=$(curl -s -X POST "$API_URL" \
