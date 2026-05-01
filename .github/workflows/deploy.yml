@@ -32,7 +32,10 @@ jobs:
             echo "--- Processus : $file ---"
 
             # 1. Read the file content
-            CONTENT=$(cat "$file")
+            CONTENT=$(cat "$file" | sed -E 's/(\[[^]]*\]\([^)]*)\.md\)/\1.html)/g')
+
+
+            FINAL_CONTENT="<base target='_parent'>\n\n$CONTENT"
 
             # 2. Create JSON payload
             # Fields : name_file, folder, convert (bool), data (string)
@@ -40,7 +43,7 @@ jobs:
               --arg nf "$filename" \
               --arg fd "github_docs" \
               --arg mode "light-mode" \
-              --arg dt "$CONTENT" \
+              --arg dt "$FINAL_CONTENT" \
               '{filename: $nf, parent: $fd, convert: false, data: $dt, mode: $mode}')
 
             # 3. Call the API
@@ -82,11 +85,11 @@ jobs:
           done
 
           # Rename index.html if necessary for GitHub Pages
-          if [ -f "_site/index.html" ]; then
-            echo "Index file ready"
-          elif [ -f "_site/readme.html" ]; then
-            mv _site/readme.html _site/index.html
-          fi
+
+          if [ -f "_site/README.html" ]; then mv _site/README.html _site/index.html; fi
+          if [ -f "_site/readme.html" ]; then mv _site/readme.html _site/index.html; fi
+
+          
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
