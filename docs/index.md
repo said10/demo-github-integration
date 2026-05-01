@@ -5,8 +5,8 @@
  _______
 
 :: menu{id="" theme="primary-theme" mode="mode-simple-menu" font="sans-serif-font-heading" box_type="container-box"}
-    :- link{url="https://said10.github.io/demo-github-integration/review.html" target="_blank" text="Technical Review Page"} :- link
-    :- link{url="https://said10.github.io/demo-github-integration/classic_page.html" target="_blank" text="Classic Test Page"} :- link
+    :- link{url="review.md" target="_blank" text="Technical Review Page"} :- link
+    :- link{url="classic_page.md" target="_blank" text="Classic Page test"} :- link
 :: menu
 
 
