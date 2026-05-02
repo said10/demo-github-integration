@@ -10,10 +10,6 @@
     :- link{url="classic_page.md" target="_self" text="Classic Page about"} :- link
 :: menu
 
-
-
-:: header{theme="strawberry-theme" mode="mode-text" font="sans-serif-font-global" align="align-center" box_type="container-view" sub_title="Welcome" button_link="" button_text="" cover="" title="Title of Technical Review" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} :: header
-
 ________
 
 :: layout{layout="layout-main-side-inverse" font="sans-serif-font-global" box_type="container-view"}
