@@ -1,3 +1,7 @@
+
+:: header{theme="green-theme" mode="mode-text" font="serif-font-heading" align="left-align" box_type="container-view" sub_title="Welcome" button_link="" button_text="Super Markdown" cover="" title="Home page for the documentation" description="This page presents the technical documentation for the project."} :: header
+
+
  _______
 
 :: menu{id="" theme="primary-theme" mode="mode-simple-menu" font="sans-serif-font-heading" box_type="container-box"}
@@ -5,6 +9,10 @@
     :- link{url="review.md" target="_self" text="Review Page about"} :- link
     :- link{url="classic_page.md" target="_self" text="Classic Page about"} :- link
 :: menu
+
+
+
+
 
 
 :: header{theme="green-theme" mode="mode-text" font="serif-font-heading" align="left-align" box_type="container-view" sub_title="sub title" button_link="https://super-md.com" button_text="Super Markdown" cover="" title="title of header" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} :: header
