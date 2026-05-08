@@ -56,7 +56,7 @@ jobs:
               --arg mode "$MODE" \
               --arg convert "$CONVERT" \
               --arg dt "$STEP3" \
-              '{filename: $nf, parent: $fd, convert: $convert, data: $dt, mode: $mode}')
+              '{filename: $nf, parent: $fd, convert: false, data: $dt, mode: $mode}')
 
             # 3. Call the API
             RESPONSE=$(curl -s -X POST "$API_URL" \
