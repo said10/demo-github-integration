@@ -31,7 +31,6 @@ jobs:
           REPO_NAME: "${{ github.event.repository.name }}"
           FOLDER_NAME: "github_docs"
           MODE: "light-mode"
-          CONVERT: false
         run: |
           for file in docs/*.md; do
             filename=$(basename "$file" .md)
@@ -54,7 +53,6 @@ jobs:
               --arg nf "$filename" \
               --arg fd "$FOLDER_NAME" \
               --arg mode "$MODE" \
-              --arg convert "$CONVERT" \
               --arg dt "$STEP3" \
               '{filename: $nf, parent: $fd, convert: false, data: $dt, mode: $mode}')
 
